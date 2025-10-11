@@ -36,5 +36,34 @@ namespace Yummy.Api.Controllers
             _context.SaveChanges();
             return Ok("Ekleme İşlemi Başarılı");
         }
+
+        [HttpDelete]
+        public IActionResult DeleteContact(int id)
+        {
+            var value = _context.Contacts.Find(id);
+            _context.Contacts.Remove(value);
+            _context.SaveChanges();
+            return Ok("Silme İşlemi Başarılı");
+        }
+        [HttpGet("GetContact")]
+        public IActionResult GetContact(int id)
+        {
+            var value = _context.Contacts.Find(id);
+            return Ok(value);
+        }
+        [HttpPut]
+        public IActionResult UpdateContact(UpdateContactDTO updateContactDTO)
+        {
+            Contact contact = new Contact();
+            contact.Email = updateContactDTO.Email;
+            contact.Address = updateContactDTO.Address;
+            contact.Phone = updateContactDTO.Phone;
+            contact.ContactID = updateContactDTO.ContactID;
+            contact.OpenHours = updateContactDTO.OpenHours;
+            contact.MapLocation = updateContactDTO.MapLocation;
+            _context.Contacts.Update(contact);
+            _context.SaveChanges();
+            return Ok("Güncelleme tamamlandı");
+        }
     }
 }
