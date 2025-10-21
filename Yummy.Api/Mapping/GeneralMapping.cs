@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Yummy.Api.DTO.FeatureDTO;
 using Yummy.Api.DTO.MessageDTO;
+using Yummy.Api.DTO.ProductDTO;
 using Yummy.Api.Entity;
 
 namespace Yummy.Api.Mapping
@@ -21,6 +22,8 @@ namespace Yummy.Api.Mapping
             CreateMap<Message, GetByIDMessageDTO>().ReverseMap();
             CreateMap<Message, ResultMessageDTO>().ReverseMap();
 
+            //******************************************************************************************************//
+            CreateMap<Product, CreateProductDTO>().ReverseMap();
 
 
 
