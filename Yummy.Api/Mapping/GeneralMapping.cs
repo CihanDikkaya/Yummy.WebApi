@@ -24,6 +24,7 @@ namespace Yummy.Api.Mapping
 
             //******************************************************************************************************//
             CreateMap<Product, CreateProductDTO>().ReverseMap();
+            CreateMap<Product, ResultProductWithCategoryDTO>().ReverseMap().ForMember(x => x.Name, y => y.MapFrom(z => z.CategoryName)).ReverseMap();
 
 
 
