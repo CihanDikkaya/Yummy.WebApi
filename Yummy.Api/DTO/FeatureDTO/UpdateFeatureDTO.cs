@@ -1,6 +1,6 @@
-﻿namespace Yummy.Api.Entity
+﻿namespace Yummy.Api.DTO.FeatureDTO
 {
-    public class Feature
+    public class UpdateFeatureDTO
     {
         public int FeatureID { get; set; }
         public string Title { get; set; }
@@ -8,6 +8,5 @@
         public string Description { get; set; }
         public string ImageURL { get; set; }
         public string VideoURL { get; set; }
-
     }
 }
